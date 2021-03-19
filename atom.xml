@@ -6,7 +6,7 @@
   <link href="http://www.chixiang.me/atom.xml" rel="self"/>
   
   <link href="http://www.chixiang.me/"/>
-  <updated>2021-03-19T04:12:03.501Z</updated>
+  <updated>2021-03-19T22:05:52.776Z</updated>
   <id>http://www.chixiang.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notion 应用场景之稍后阅读</title>
+    <link href="http://www.chixiang.me/2021/03/19/Notion-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB/"/>
+    <id>http://www.chixiang.me/2021/03/19/Notion-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B9%8B%E7%A8%8D%E5%90%8E%E9%98%85%E8%AF%BB/</id>
+    <published>2021-03-19T11:43:40.000Z</published>
+    <updated>2021-03-19T22:05:52.776Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于 Notion 有非常丰富的界面组件，而且支持高度自定义的数据组织方式，所以它的应用场景也是及其丰富。就好比是应用界的乐高，最大的限制可能就是我的想象力了。从本篇文章开始，我会持续更新一些比较实用的应用场景，希望能够更好的利用 Notion。</p><p>本篇文章介绍一个比较常见的应用场景，就是将 Notion 作为稍后阅读工具。但是如果仅仅作为收藏文章的“抽屉”来说，并没有完全发挥出 Notion 的作用，很容易出现只是不停的收藏而不去读的情况，变成一个收藏黑洞，所以要利用 Notion 的其他功能，也就是我们前几篇文章已经实现的个人事务管理系统，做到有效的连结和提醒，这样才能真正“清空”阅读清单，而且能够将阅读清单变成和事务相关联的资源。而这，正是属于 P.A.R.A 中 Resource 的范畴，可以参考我之前的这篇文章：<a href="http://www.chixiang.me/2021/03/17/%E4%BB%80%E4%B9%88%E6%98%AF-P-A-R-A/">《什么是 P.A.R.A》</a>。其他几篇关于实现个人事务管理系统的文章链接我会放本篇最后。</p><h2 id="稍后阅读实现"><a href="#稍后阅读实现" class="headerlink" title="稍后阅读实现"></a>稍后阅读实现</h2><p>利用 Notion 实现的稍后阅读工具可以在 Chrome 浏览器、iOS 和 Android 系统上使用，覆盖到了绝大多数人的使用场景，下面我们来一一介绍。</p><h3 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h3><p>首先安装 Chrome 插件，<a href="https://chrome.google.com/webstore/detail/notion-web-clipper/knheggckgoiihginacbkhaalnibhilkk?hl=en">安装地址在这里</a></p><p>安装完成后，在需要收藏的文章页面，点击 Chrome 右上角插件栏中的 Notion 图标，点击<code>Add to</code>，选择<code>New links database</code>，然后点击<code>Save page</code>。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gophzx6zllj31c00u0ncj.jpg"></p><p>打开 Notion，会看到已经自动帮我们建立了“My Links”页面，并将这篇文章收录到了列表中，我们会发现这是一个“List”形式的视图。可以将页面名称修改为“稍后阅读”。点击列表中的文章名称打开页面。接下来添加一些属性，如果你是按照我之前几篇文章实现的事务管理，也可以加上关系型的两个字段，任务和项目，将这篇文章关联到某个任务或者是某个项目上，即文章可作为任务或项目的参考，在任务和项目页面也可方便的查看。</p><table><thead><tr><th align="center">属性名称</th><th align="center">属性类型</th><th align="left">说明</th></tr></thead><tbody><tr><td align="center">状态</td><td align="center">Select</td><td align="left">状态可为“未读”、“在读”和“读完”等</td></tr><tr><td align="center">类型</td><td align="center">Select</td><td align="left">“文章”、“网站”、“视频”等</td></tr><tr><td align="center">评分</td><td align="center">Select</td><td align="left">一颗星到五颗星</td></tr><tr><td align="center">任务</td><td align="center">Relation</td><td align="left">关联到“任务”数据库</td></tr><tr><td align="center">项目</td><td align="center">Relation</td><td align="left">关联到“项目”数据库</td></tr></tbody></table><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopjyt38daj30y70u04qp.jpg" alt="添加属性"></p><p>回到稍后阅读页面，我们使用<code>Add a view</code>新增一个 table 视图，展示出所有字段便于维护。为了演示，我这里再新增几条稍后读的条目。</p><p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopk8mclj5j31dt0u01kx.jpg"></p><h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><p>再来看看 iPhone 上面的使用方法，其实很简单，通过 App Store 安装 Notion，然后在系统的分享菜单中就会出现分享到 Notion 的图标，选择这个图标即可将内容发送到 Notion 中。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopkxaj66xj30u00ux4qq.jpg" alt="iOS"></p><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>使用 Android 手机收藏文章的方式和 iOS 类似，首先安装 Notion app，然后就可以通过系统分享菜单中 Notion 图标将具体内容保存到稍后阅读页面了。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopwxzqyssj30se1hejud.jpg" alt="Android"></p><h2 id="稍后阅读跟踪"><a href="#稍后阅读跟踪" class="headerlink" title="稍后阅读跟踪"></a>稍后阅读跟踪</h2><p>以上三种方式可以通过不同的渠道，将感兴趣的文章或其他内容收集到 Notion 中，接下来我们需要将稍后阅读列表和个人事务管理系统结合起来，成为 P.A.R.A 方法的一个整体。</p><p>也很简单，就是在“每日看板”页面中新增“linked database”，数据源选择稍后阅读列表，然后添加一个“Filter”将未读和在读的文章删选出来即可，在这里我使用 Gallery 视图进行展示。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopxm05iycj30y70u04qp.jpg" alt="每日看板中的阅读列表"></p><p>当我们在项目或者任务页面查看具体内容时，也可以看到相关的阅读内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopxos5epaj31dt0u0qll.jpg"></p><p>好了，怎样使用 Notion 作为稍后阅读工具就介绍到这里。我们不但实现了稍后阅读功能，还将它和个人事务管理系统结合，和项目或者任务相关联，通过每日看板进行统一跟踪。</p><p>相关阅读：</p><ul><li><a href="http://www.chixiang.me/2021/03/16/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Notion%E7%9A%84/">《我是如何使用 Notion 的》</a></li><li><a href="http://www.chixiang.me/2021/03/17/%E4%BD%BF%E7%94%A8-Notion-%E8%BF%9B%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">《使用 Notion 进行任务管理》</a></li><li><a href="http://www.chixiang.me/2021/03/17/%E4%BB%80%E4%B9%88%E6%98%AF-P-A-R-A/">《什么是 P.A.R.A》</a></li><li><a href="http://www.chixiang.me/2021/03/18/%E4%BD%BF%E7%94%A8-Notion-%E8%BF%9B%E8%A1%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">《使用 Notion 进行项目管理》</a></li><li><a href="http://www.chixiang.me/2021/03/19/%E5%9C%A8-Notion-%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%AF%8F%E6%97%A5%E7%9C%8B%E6%9D%BF/">《在 Notion 中创建每日看板》</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;由于 Notion 有非常丰富的界面组件，而且支持高度自定义的数据组织方式，所以它的应用场景也是及其丰富。就好比是应用界的乐高，最大的限制可能就是我的想象力了。从本篇文章开始，我会持续更新一些比较实用的应用场景，希望能够更好的利用 Notion。&lt;/p&gt;
+&lt;p&gt;本篇文章介绍</summary>
+      
+    
+    
+    
+    <category term="Productivity" scheme="http://www.chixiang.me/categories/Productivity/"/>
+    
+    
+    <category term="notion" scheme="http://www.chixiang.me/tags/notion/"/>
+    
+  </entry>
   
   <entry>
     <title>在 Notion 中创建每日看板</title>
